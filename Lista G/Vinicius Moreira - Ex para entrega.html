@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite seu nome: <input id="inputNomeAtleta"><br>
+    Digite sua idade: <input id="inputIdadeAtleta"><br>
+
+
+    Qual esporte você vai praticar? 
+    <select id="selectEsporte">
+        <option value="Correr">Correr</option>
+        <option value="Nadar">Nadar</option>
+        <option value="Pedalar">Pedalar</option>
+    </select><br>
+
+    <button onclick="praticar()">Praticar esporte</button>
+    <button onclick="limpar()">Limpar</button><br>
+
+    <span id="nomeIdade"></span>
+    <br><br>
+
+    <span id="correndo"></span>
+    <br>
+    
+    <span id="nadando"></span>
+    <br>
+
+    <span id="pedalando"></span>
+    <br><br>
+    
+    <span id="totalKm"></span><br>
+
+    <div id="imagemCorrida"></div>
+    <div id="imagemNadar"></div>
+    <div id="imagemPedalar"></div>
+</body>
+</html>
+<script>
+    var correr = 0;
+    var nadar = 0;
+    var pedalar = 0;
+    var totalPercorrido = 0;
+
+    function praticar(){
+        var nome = inputNomeAtleta.value;
+        var idade = inputIdadeAtleta.value;
+        var qtdLetrasNome = nome.length;
+
+        if (qtdLetrasNome <3) {
+            alert("Dados inválidos");
+
+        }else if(idade < 18 || idade>80){
+            alert("Dados inválidos");
+
+        }else if(qtdLetrasNome >=3 && idade > 18 || idade<80){
+            if (selectEsporte.value == "Correr") {
+                correr += Math.random() * 2;
+                imagemCorrida.innerHTML = `<img id="idImgCorrida" src="https://image.flaticon.com/icons/png/128/103/103956.png" alt="corrida">`;
+                
+                imagemCorrida.style.float = "left";
+
+            }else if (selectEsporte.value == "Nadar") {
+                nadar += Math.random() * 2;
+                imagemNadar.innerHTML = `<img id="idImgNadar" src="https://image.flaticon.com/icons/png/128/124/124212.png" alt="nadar">`;
+                
+                imagemNadar.style.float = "left";
+
+            }else if (selectEsporte.value == "Pedalar") {
+                pedalar += Math.random() * 2
+                ;
+                imagemPedalar.innerHTML = `<img id="idImgPedalar" src="https://image0.flaticon.com/icons/png/128/94/94203.png" alt="pedalar">`;
+                
+                imagemPedalar.style.float = "left";
+            }
+            
+
+            totalPercorrido = correr + nadar + pedalar;
+
+
+            var porcentoCorrida = (correr/totalPercorrido) * 100;
+            var porcentoNadar = (nadar/totalPercorrido) * 100;
+            var porcentoPedalar = (pedalar/totalPercorrido) * 100;
+            
+
+            nomeIdade.innerHTML = `Atleta <b>${nome} </b>- Idade <b>${idade}</b> anos`;
+            correndo.innerHTML = `Km correndo: <b>${correr.toFixed(1)}</b> (<b>${porcentoCorrida.toFixed(2)}%</b>)`;
+            nadando.innerHTML = `Km nadando: <b>${nadar.toFixed(1)}</b> (<b>${porcentoNadar.toFixed(2)}%</b>)`;
+            pedalando.innerHTML = `Km pedalando: <b>${pedalar.toFixed(1)}</b> (<b>${porcentoPedalar.toFixed(2)}%</b>)`;
+            totalKm.innerHTML = `Km total: <b>${totalPercorrido.toFixed(1)}</b>`;
+            
+
+            var larguraCorrida = porcentoCorrida * 3;
+            idImgCorrida.style.width = `${larguraCorrida}px`;
+            
+            var larguraNadar = porcentoNadar * 3;
+            idImgNadar.style.width = `${larguraNadar}px`;
+            
+            var larguraPedalar = porcentoPedalar * 3;
+            idImgPedalar.style.width = `${larguraPedalar}px`;
+        }
+    }
+    function limpar(){
+
+
+    correr = 0;
+    nadar = 0;
+    pedalar = 0;
+    totalPercorrido = 0;
+    totalPercorrido = 0;
+
+    nomeIdade.innerHTML ="";
+    correndo.innerHTML ="";
+    nadando.innerHTML ="";
+    pedalando.innerHTML ="";
+    totalKm.innerHTML ="";
+    
+    imagemCorrida.innerHTML ="";
+
+    imagemNadar.innerHTML ="";
+    
+    imagemPedalar.innerHTML ="";
+    }
+</script>
