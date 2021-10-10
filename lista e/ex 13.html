@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    valor guardado R$<span id="cofrinho">0.00</span><br>
+    <button onclick="guardar5()">Guardar R$5,00</button>
+    <button onclick="gastar10()">Gastar R$10,00</button>
+    <br>
+    <span id="situacao"></span>
+
+</body>
+</html>
+<script>
+    var cofrinho_span = 0;
+    function guardar5() 
+    {
+        cofrinho_span += 5;
+        
+        cofrinho.innerHTML = cofrinho_span.toFixed(2);
+
+        if (cofrinho_span < -20)
+    {
+        situacao.innerHTML = 'Quase um Corinthians!'
+    }
+
+    else if (cofrinho_span < 0) {
+        situacao.innerHTML = '<span style="color: red"> Finanças em perigo!</span>'
+    }
+    else if (cofrinho_span <= 100) {
+        situacao.innerHTML = '<span style="color: blue"> Finanças OK!</span>'
+    }
+    else if (cofrinho_span > 100) {
+        situacao.innerHTML = ' #ostentação'
+    }    s
+}
+
+    function gastar10()
+    {
+        cofrinho_span -= 10;
+        cofrinho.innerHTML = cofrinho_span.toFixed(2);
+
+
+        if (cofrinho_span < -20)
+    {
+        situacao.innerHTML = 'Quase um Corinthians!'
+    }
+
+    else if (cofrinho_span < 0) {
+        situacao.innerHTML = '<span style="color: red"> Finanças em perigo!</span>'
+    }
+    else if (cofrinho_span <= 100) {
+        situacao.innerHTML = '<span style="color: blue"> Finanças OK!</span>'
+    }
+    else if (cofrinho_span > 100) {
+        situacao.innerHTML = ' #ostentação'
+    }    
+    }
+
+    
+</script>

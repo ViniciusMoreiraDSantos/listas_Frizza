@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a distância:
+    <br>
+    <input type="text" name="" id="distancia">
+    <br>
+    <button onclick="disponibilidade()">Verificar Disponibilidade</button>
+    <span id="spn_dist"></span>
+</body>
+</html>
+<script>
+    function disponibilidade()
+    {
+        if (distancia.value > 25)
+        {
+            spn_dist.innerHTML = 'A Pizza Rãti não entrega neste endereço!'
+        }
+        else if (5 > distancia.value < 25)
+        {
+            spn_dist.innerHTML = 'A sua pizza será entregue, porém o valor de entrega é de R$ 25,00'
+
+        }
+
+        else if (distancia.value < 5){
+            spn_dist.innerHTML = 'A sua pizza será entregue e não custará nada para você'
+        }
+    }
+</script>

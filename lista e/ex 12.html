@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="cliques()">Clica neu</button>
+    <span id="span_nivel"></span>
+</body>
+</html>
+<script>
+    var cliques_nivel = 0
+
+    function cliques() 
+    {
+        cliques_nivel ++;
+        if (cliques_nivel <= 5)
+        {
+            span_nivel.innerHTML = 'Dedo fraquinho, hein'
+        }
+
+        
+        else if (cliques_nivel <= 10)
+        {
+            span_nivel.innerHTML = 'Dedo bom, mano'
+        }
+
+        else if (cliques_nivel <= 15)
+        {
+            span_nivel.innerHTML = 'Gosta de clicar, hein'
+        
+        }
+
+        else
+        {
+            span_nivel.innerHTML = 'Eita dedo nervoso'
+        }
+
+    }
+
+</script>

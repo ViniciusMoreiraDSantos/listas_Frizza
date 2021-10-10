@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual o valor do ano? <br>
+    <input type="text" name="" id="ano_email">
+    <br>
+    <button onclick="fato()">Ver fato</button>
+    <span id="ano_span"></span>
+</body>
+</html>
+
+<script>
+    function fato()
+    {
+        if(ano_email.value < 1965) 
+        {
+            ano_span.innerHTML = 'No ano '+ ano_email.value +' o email nem havia sido criado ainda ... '
+        }
+
+        else if (ano_email.value == 1965) 
+        {
+            ano_span.innerHTML = 'No ano '+ ano_email.value +' o email estava sendo criado ... '
+        }
+
+        else if (1966 > ano_email.value <1969)
+        {
+            ano_span.innerHTML = 'No ano '+ ano_email.value +' o email já havia sido criado ...'
+        }
+        else 
+        {
+            ano_span.innerHTML = 'No ano '+ ano_email.value +' o email já havia sido aprimorado - Poderia ser enviado para outro computador ...'
+        }
+    }
+</script>

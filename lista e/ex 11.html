@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="align-content: center;">
+    selecione um mês do ano:
+    <select name="" id="estacoes_do_ano" onchange="estacoes()">
+        <option selected disabled value="">selecione algum mês do ano</option>
+        <option value="janeiro">janeiro</option>
+        <option value="fevereiro">fevereiro</option>
+        <option value="março">março</option>
+        <option value="abril">abril</option>
+        <option value="maio">maio</option>
+        <option value="junho">junho</option>
+        <option value="julho">julho</option>
+        <option value="agosto">agosto</option>
+        <option value="setembro">setembro</option>
+        <option value="outubro">outubro</option>
+        <option value="novembro">novembro</option>
+        <option value="dezembro">dezembro</option>
+    </select>
+    <br><br><br>
+    <img src="" id="estacoes_img" alt="">
+</body>
+</html>
+
+<script>
+    function estacoes()
+    {
+        //outono
+        if (estacoes_do_ano.value == 'março') 
+        {
+            estacoes_img.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/11/folhas.jpg";
+        }
+
+      
+        
+        else if (estacoes_do_ano.value == 'maio') 
+        {
+            estacoes_img.src = " https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/11/folhas.jpg";
+        }
+        else if (estacoes_do_ano.value == 'abril') 
+        {
+            estacoes_img.src = " https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/11/folhas.jpg";
+        }
+         
+        
+        // verão
+        else if (estacoes_do_ano.value == 'janeiro') 
+        {
+            estacoes_img.src = "https://cdn.abcdoabc.com.br/verao_5508634b.jpg";
+        }
+        else if (estacoes_do_ano.value == 'dezembro') 
+        {
+            estacoes_img.src = "https://cdn.abcdoabc.com.br/verao_5508634b.jpg";
+        }
+        
+        else if (estacoes_do_ano.value == 'fevereiro') 
+        {
+            estacoes_img.src = "https://cdn.abcdoabc.com.br/verao_5508634b.jpg";
+        }
+        
+        // primavera
+
+        else if (estacoes_do_ano.value == 'setembro') 
+        {
+            estacoes_img.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/2019/08/primavera.jpg";
+        }
+        
+        else if (estacoes_do_ano.value == 'outubro') 
+        {
+            estacoes_img.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/2019/08/primavera.jpg";
+        }
+        
+        else if (estacoes_do_ano.value == 'novembro') 
+        {
+            estacoes_img.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/2019/08/primavera.jpg";
+        }
+        
+        //inverno 
+        else if (estacoes_do_ano.value == 'junho') 
+        {
+            estacoes_img.src = "https://www.infoescola.com/wp-content/uploads/2008/10/inverno.jpg";
+        }
+        
+        else if (estacoes_do_ano.value == 'julho') 
+        {
+            estacoes_img.src = "https://www.infoescola.com/wp-content/uploads/2008/10/inverno.jpg";
+        }
+        
+        else if (estacoes_do_ano.value == 'agosto') 
+        {
+            estacoes_img.src = "https://www.infoescola.com/wp-content/uploads/2008/10/inverno.jpg";
+        }
+        }
+
+</script>

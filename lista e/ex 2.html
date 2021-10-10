@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a renda familiar? <br> 
+    <input type="text" name="" id="renda" onkeydown="renda_familiar()"> <br>
+    <span id="span_renda"></span>
+</body>
+</html>
+
+<script>
+function renda_familiar()
+{
+    if(renda.value < 250)
+    {
+        span_renda.innerHTML = "Classe E";
+    }
+    else if (renda.value < 950)
+    {
+        span_renda.innerHTML = "Classe D";
+    }
+    else if (renda.value < 2500)
+    {
+        span_renda.innerHTML = "Classe C";
+    }
+    else if (renda.value < 9500)
+    {
+        span_renda.innerHTML = "Classe B";
+    }
+    else if (renda.value > 9500)
+    {
+        span_renda.innerHTML = "Classe A";
+    }
+}
+
+</script>
