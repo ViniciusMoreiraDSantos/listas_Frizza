@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="jokepo()">Jogar</button>
+    <img id="jk_img" src="" alt="">
+
+</body>
+
+</html>
+<script>
+    function jokepo() {
+        var ax_jokenpo = Math.random() * 2 + 1;
+        ax_jokenpo = ax_jokenpo.toFixed();
+            
+        if (ax_jokenpo == 1) {
+            jk_img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTPrOal_vl1zWqqmynV-eQh2gsJMvnrQsLS2X1umBCAIoJ8jn-XDPG_cjT54Bb7CZfUco&usqp=CAU'
+        }
+        else if (ax_jokenpo == 2)
+        {
+            jk_img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNy8ljFLjqflX90__c2tj-C53VTDSKumO6PBC6jIFLZ1UQhIMSMfDzgI8Q6XU5mdS6fZU&usqp=CAU'
+        }
+        
+        else if (ax_jokenpo == 3){
+            jk_img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_8hJpbTTIzWpEKklZTTOk0JgkdcbUSS4EQBYUoGLE4k-lQSFf95XY6faa4V4qmtF3xl4&usqp=CAU'
+        }
+        }
+    
+</script>

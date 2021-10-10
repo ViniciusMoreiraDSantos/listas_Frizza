@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <BUTton onclick="jogador1()">Jogador 1 jogar dadinho</BUTton>
+    <br>
+    <span id="sp_jg1"></span>
+    <br>
+    <BUTton onclick="jogador2()">Jogador 2 jogar dadinho</BUTton>
+    <br>
+    <span id="sp_jg2"></span>
+</body>
+</html>
+<script>
+    var ax_jg1 = 0;
+    var ax_jg2 = 0;
+    
+    function jogador1()
+    {
+        ax_jg1 = Math.random() * 5 + 1;
+        sp_jg1.innerHTML = ax_jg1.toFixed();
+    
+    }
+
+    function jogador2()
+    {
+        ax_jg2 = Math.random() * 5 + 1;
+        sp_jg2.innerHTML = ax_jg2.toFixed();
+        if(ax_jg1 > ax_jg2)
+        {
+            sp_jg2.innerHTML += '<br> Jogador 1 venceu'
+        }
+        else 
+        {
+            sp_jg2.innerHTML += '<br> Jogador 2 venceu'
+        }
+    }
+</script>

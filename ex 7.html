@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="cabalistico()">Quero um cabalístico</button>
+    <span id="sp_caba"></span>
+</body>
+</html>
+
+<script>
+    function cabalistico()
+    {
+        var ax_cabala = Math.random() * 14 + 1;
+        ax_cabala = ax_cabala.toFixed();
+        
+        
+        if (ax_cabala == 3 || ax_cabala == 4 ||ax_cabala == 7 || ax_cabala == 10 || ax_cabala == 12)
+        {
+            sp_caba.innerHTML = 'Eu S2 números cabalísticos!';
+        }
+        else
+        {
+            sp_caba.innerHTML = 'Ah, me dá um número bom na próxima!';
+        }
+            
+        
+    }
+</script>

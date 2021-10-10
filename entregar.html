@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="nome_i" placeholder="Nome (min. 3 letras)">
+    <br>
+    <input type="text"  id="idade_ipt" placeholder="idade(entre 18 e 80 anos)">
+    <br>
+    <select name="" id="esportes_pratica">
+        <option value="correr">Correr</option>
+        <option value="nadar">Nadar</option>
+        <option value="pedalar">Pedalar</option>
+    </select>
+    <button onclick="esporte()">Praticar Esporte</button>
+    <br>
+    Atleta: <span id="nome_mostrar"></span>- Idade: <span id="idade_mostrar"></span> anos
+    <br>
+    Km correndo: <span id="correndo"></span>
+    <br>
+    Km nadando: <span id="nadando"></span>
+    <br>
+    Km pedalando: <span id="pedalando"></span>
+
+    Km total: <span id="total_span"></span>
+
+    <br>
+    <span id="sp_teste"></span>
+</body>
+
+</html>
+<script>
+        var ax_correndo = 0;
+        var ax_nadando = 0;
+        var ax_pedalando = 0;
+
+    function esporte() {    
+            sp_teste.innerHTML = nome_inserido;
+            var idade = idade_ipt.value;
+            var nome_inserido = String(nome_i.value);
+            
+        if (nome_inserido.length == 3 && idade >= 18 && idade <= 80) {
+            ax_correndo = Math.random() * 2;
+            ax_pedalando = Math.random() * 2;
+            ax_nadando = Math.random() * 2;
+
+            var total = `${ax_nadando + ax_pedalando + ax_correndo}`;
+            
+            nome_mostrar.innerHTML = nome;
+            idade_mostrar.innerHTML = idade;
+            
+            correndo.innerHTML = ax_correndo.toFixed(2);
+            nadando.innerHTML = ax_nadando.toFixed(2);
+            pedalando.innerHTML = ax_pedalando.toFixed(2);
+
+
+            total_span.innerHTML = total;
+
+
+            
+
+
+        }
+        else {
+            alert('Insira os dados corretamente')
+        }
+    }
+    
+</script>

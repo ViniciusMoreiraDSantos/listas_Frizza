@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <BUtton onclick="dado()">Lançar os dados</BUtton>
+    <br>
+    <img id="mostrar" src="" alt="">
+</body>
+</html>
+<script>
+    function dado(params) {
+        var ax_num = Math.random();
+        ax_num2 = `${ax_num * 7 + 1}`;
+        if (ax_num2 <= 2 ) {
+            mostrar.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk10AcXCzpN8KEzHjkw60nVLqKnh94lQB7oy1VDdZdeyt49bXWM0SbXpwXfGQVROm9kpg&usqp=CAU'
+        }
+        else if (ax_num2 <= 3) {
+            mostrar.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIvyUKI8quVsDJyQ3dedA4ShtM6I4MgIhzCQxNMffF3xIoH9DHNIfCi1rt8zOBRAXyw_c&usqp=CAU'
+        }
+        else if (ax_num2 <= 4) {
+            mostrar.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNrBMQ0DkEcUErNJtZods70YTmgThNr1umD430ofve7j5kL6p6Dpfc9wzdmilo2S4OZVA&usqp=CAU'
+        }
+        else if (ax_num2 <= 5) {
+            mostrar.src = 'https://images.vectorhq.com/images/previews/6a9/dado-4-138319.png'
+        }
+        else if (ax_num2 <= 6) {
+            mostrar.src = 'https://images.vectorhq.com/images/previews/93c/dado-5-138316.png'
+        }
+        else  if (ax_num2 <= 7) {
+            mostrar.src = 'https://png.vector.me/files/images/3/2/323082/dado_6_preview'
+        }
+    }
+</script>
