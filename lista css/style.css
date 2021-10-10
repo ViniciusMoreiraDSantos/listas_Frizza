@@ -1,0 +1,33 @@
+.div_a
+        {
+            background-color:  rgb(248, 182, 59);
+            width: 500px;
+            height: 500px;
+
+        }
+        .div_b
+        {
+            background-color: rgb(114, 241, 114);
+            width: 50%;
+            height: 50%;
+        }
+        .div_c
+        {
+            color: white;
+            background-color: red;
+            font-size: 25px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+        .div_d
+        {
+            width: 50% ;
+            height: 50vh;
+            background-color: rgb(88, 88, 255);
+        }
+        .div_e
+        {
+            width: 75vh;
+            height: 50%;
+            background-color: rgb(255, 24, 24);
+        }
