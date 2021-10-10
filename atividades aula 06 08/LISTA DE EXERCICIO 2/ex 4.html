@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H2>Vamos calcular a média</H2>
+    Digite o primeiro numero <input id="primeirovalor" type="text" placeholder="primeiro numero">
+    Digite o segundo numero <input type="text"  id="segundovalor" placeholder="segundo numero"> 
+    <button onclick="calcular()">calcular</button>
+    <div id="div_media"></div>
+</body>
+</html>
+<script>
+    function calcular()
+    {
+        var ax_num1 = Number(primeirovalor.value);
+        var ax_num2 =  Number(segundovalor.value);
+        var ax_num3 = `${ ax_num1  + ax_num2}`
+        div_media.innerHTML = ` Sua média é: ${ax_num3 / (2)}`
+
+    }
+</script>

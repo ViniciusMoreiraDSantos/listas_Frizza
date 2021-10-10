@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>ki base do Guerreiro Sayajin: 2000</h3>
+    <button onclick="ssj()">Transformar em SSJ</button>
+    <button onclick="ssj2()">Transformar em SSJ2</button>
+    <button onclick="ssj3()">Transformar em SSJ3</button>
+    <button onclick="Formabase()">Voltar a forma Base</button>
+    <div id="div_ssj"></div>
+</body>
+</html>
+<script>
+    function ssj()
+    {
+        div_ssj.innerHTML += '<span style="color: blue">ki na forma SSJ: 100000 </span><br>'
+    }
+    function ssj2()
+    {
+        div_ssj.innerHTML += '<span style="background-color: blue; color: yellow">ki na forma SSJ: 200000 </span><br>'
+    }
+    function ssj3() 
+    {
+        div_ssj.innerHTML += '<span style="background-color: orange; color: yellow">ki na forma SSJ: 400000 </span><br>'
+    }
+    function Formabase()
+    {
+        div_ssj.innerHTML = ''
+    }
+</script>

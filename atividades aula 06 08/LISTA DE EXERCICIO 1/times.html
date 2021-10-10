@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>corinthians</title>
+</head>
+
+<body>
+    <h2> Time </h2>
+    <button onclick="time_se_sp()">times</button>
+    
+    <button onclick="alt_time()">altera o time</button>
+    
+    <button onclick="trazer_de_volta()">trazer a frase original</button>
+    <button onclick="legumes()">Legumes</button> 
+    <button onclick="apagar()">apagar</button>
+
+    <div id="div_time">o <b id="b_time" style="color: blueviolet;">Juventos</b>  é o melhor time de são paulo</div>
+    
+</body>
+
+</html>
+<script>
+    function time_se_sp() {
+        div_time.innerHTML = ' <div id="div_time">o <b id="b_time" style="color: blueviolet;">Juventos</b>  é o melhor time de são paulo</div>';
+    }
+    function alt_time() 
+    {
+        b_time.innerHTML ='<b style="color: white; background-color: black;">corinthians</b>';
+    }
+    function trazer_de_volta()
+    {
+        div_time.innerHTML =' <div id="div_time">o <b id="b_time" style="color: blueviolet;">Juventos</b>  é o melhor time de são paulo</div> <br>';
+    }
+    function legumes() 
+    {
+        div_time.innerHTML += '<b> CHUCHU</B>';
+    }
+    function apagar()
+    {
+        div_time.innerHTML-= 'apagado';
+    }
+</script>

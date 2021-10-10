@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas horas de sono geralmente você dormiu <input id="qtdsono" type="text" placeholder="Digite a quantidade de horas dormidas">
+    <button onclick="calcularsono()">Calcular o sono</button>
+    <div id="div_sono"></div>
+</body>
+</html>
+<script>
+    function calcularsono()
+    {
+        div_sono.innerHTML = ` 
+    Ao dormir ${qtdsono.value} horas, você dormiu:<br>
+    A ${qtdsono.value * 0.05    } horas na fase A<br>
+    B ${qtdsono.value * 0.45} horas na fase B<br>
+    C ${qtdsono.value * 0.30} horas na fase C <br>
+    D ${qtdsono.value * 0.20} horas na fase REM<br>
+
+ `
+    }
+</script>

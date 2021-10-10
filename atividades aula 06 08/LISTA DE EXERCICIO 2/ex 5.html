@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual o valor da passagem do ônibus <input id="passagem" type="text" placeholder="valor da passagem"><br>
+    Quantidade de viagens feitas <input id="viagens" type="text" placeholder="Quantidade de viagens"><br>
+    <button onclick="calcularvt()">Calcular VT</button>
+    <DIV id="div_gasto"></DIV>
+</body>
+</html>
+<script>
+    function calcularvt()
+    {
+        var ax_pas = Number(passagem.value)
+        var ax_via = Number(viagens.value)
+        var ax_mensal = ax_pas * ax_via;
+        div_gasto.innerHTML = `Você vai gastar ${ax_mensal} por mês com ônibus`
+    }
+</script>

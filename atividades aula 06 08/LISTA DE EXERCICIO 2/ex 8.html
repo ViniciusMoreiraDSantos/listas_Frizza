@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        Digite seu salario <input id="salario" type="text" placeholder="salario">
+        <br>
+        <button onclick="desconto()">Calcular descontos</button>
+        <div id="div_desc"></div>
+</body>
+</html>
+<script>
+    function desconto()
+    {
+        var ax_salario = Number(salario.value)
+        var ax_inss = (ax_salario * (0.1));
+        var ax_ir = (ax_salario * (0.2));
+        
+        var ax_saldesc = `${ax_ir + ax_inss}`
+        div_desc.innerHTML = ` Seus descontos serão de:<br>
+    INSS: R$${ax_inss} <br>
+    IR: R$${ax_ir} <br>
+    Total de descontos: R$ ${ax_inss + ax_ir} <br>
+    Seu salário, após os descontos será de: R$${ax_salario - ax_saldesc}`
+    }
+</script>

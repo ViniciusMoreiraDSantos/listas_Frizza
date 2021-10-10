@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cidade natal</title>
+</head>
+<body>
+    Cidade natal <input id="cidadeN" type="text" placeholder=" digite sua cidade natal"><br>
+    Ano de nascimento <input id="anonasc" type="text" style="width: auto;" placeholder="digite seu ano de nascimento"><br>
+    <button onclick="cadastro()">Cadastrar</button>
+    
+</body>
+</html>
+<script>
+    function cadastro()
+    {
+        alert ("Você nasceu na cidade " + cidadeN.value + "em " + anonasc.value );
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Brasil X Alemanha</h2>
+<button style="float: left;" onclick="Brasil()">Gol do Brasil</button>
+<button style="float: left;" onclick="Alemanha()">Gol da Alemanha</button>
+<br><br>
+<B> EM TEMPO REAL</B>
+<div id="div_brasil"></div>
+</body>
+</html>
+<script>
+function Brasil() 
+{
+ div_brasil.innerHTML += '<span style = "color:green;">É gooool do Brasil <br></span>'
+}
+function Alemanha()
+{
+    div_brasil.innerHTML +='<span style = "background-color:red; color: yellow">É gol da Alemanha <br>'
+}
+
+</script>

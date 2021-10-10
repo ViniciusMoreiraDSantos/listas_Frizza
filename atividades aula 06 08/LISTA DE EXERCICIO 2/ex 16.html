@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número <input id="tabuada" type="text" placeholder="digite um numero"> 
+    <br>
+    <button onclick="tabuada()">ver tabuada</button>
+    <div id="div_tabuada"></div>
+</body>
+</html>
+<script>
+    function tabuada()
+    {
+        div_tabuada.innerHTML = 
+        `
+        ${tabuada} X 1 = ${tabuada * 1}<br>
+        ${tabuada} X 2 = ${tabuada * 2}<br>
+        ${tabuada} X 3 = ${tabuada * 3}<br>
+        ${tabuada} X 4 = ${tabuada * 4}<br>
+        ${tabuada} X 5 = ${tabuada * 5}<br>
+        ${tabuada} X 6 = ${tabuada * 6}<br>
+        ${tabuada} X 7 = ${tabuada * 7}<br>
+        ${tabuada} X 8 = ${tabuada * 8}<br>
+        ${tabuada} X 9 = ${tabuada * 9}<br>
+        `
+    }
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o nome do aluno <input id="nome" type="text" placeholder="nome"><br>
+    Digite o total de aulas do cursos <input id="aulas" type="text" placeholder="curso"><br>
+    Digite a quantidade de aulas que o aluno faltou <input id="faltas" type="text" placeholder="faltas">
+    <button onclick="calcularf()">Calcular Frequência</button>
+    <div id="div_calculo"></div>
+    
+
+</body>
+</html>
+<script>
+    function calcularf()
+    {
+
+        // 150 - 100 
+        // 143 - x
+
+        var ax_aulas = Number(aulas.value)
+        var ax_faltas  = Number(faltas.value)
+        var ax_frequencia = (ax_aulas - ax_faltas);
+        var ax_freqtotal = (ax_frequencia * 100);
+        var ax_valorx = (ax_freqtotal / ax_aulas);
+
+
+        div_calculo.innerHTML = `<span style="color: blue;"> Olá, ${nome.value}! Sua frequência foi de </span> <b style = "color: green"> ${ax_valorx}%</b><br>`;
+
+        div_calculo.innerHTML += `<br><div id="div_barra" style="width: ${ax_valorx}% ; background-color: red;">${ax_valorx}%</div`
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantidade de votos do Zé Buduia teve na eleição<input id="zebuduia" type="text" placeholder="Quantidade de votos do Zé buduia"><br>
+    quantidade de votos que a Maria Bigodenha <input type="text" id="mariab" placeholder="Quantidade de votos da maria bigodenha"> <br>
+    Quantidade de voto branco na eleição <input type="text" id="vtbranco" placeholder="Votos brancos"><br>
+    Quantidade de votos nulos <input id="vtnulo" type="text" placeholder="Votos nulos">
+    <button onclick="resultado()"> Resultado da eleição</button>
+    <div id="div_eleicao"></div>
+</body>
+</html>
+<script>
+    function resultado()
+    {
+        var ax_ze = Number(zebuduia.value);
+        var ax_maria = Number(mariab.value);
+        var ax_branco = Number(vtbranco.value);
+        var ax_nulo = Number(vtnulo.value);
+
+        var ax_invalidos =  `${ax_branco + ax_nulo}`
+        var ax_total = `${ax_branco + ax_ze + ax_maria + ax_nulo}`
+        //ZÉ
+        var ax_porc =  (ax_total - ax_ze);
+        var ax_portotal = (ax_porc * 100);
+        var ax_valorx1 = (ax_portotal / ax_total);
+        //MARIA
+        var ax_porc2 =  (ax_total - ax_maria);
+        var ax_portotal2 = (ax_porc2 * 100);
+        var ax_valorx2 = (ax_portotal2 / ax_total);
+        //INVALIDOS
+        var ax_porc3 =  (ax_total - ax_invalidos);
+        var ax_portotal3 = (ax_porc3 * 100);
+        var ax_valorx3 = (ax_portotal3 / ax_total);
+        
+        div_eleicao.innerHTML = `
+    Total de votos: ${ax_total}<br>
+    Zé Ruela: ${ax_valorx1}% (${ax_ze} votos)<br>
+    Maria Bigodenha: ${ax_valorx2}% (${ax_maria} votos)<br>
+    Inválidos:${ax_valorx3}% (${ax_invalidos} votos)`
+    }
+</script>

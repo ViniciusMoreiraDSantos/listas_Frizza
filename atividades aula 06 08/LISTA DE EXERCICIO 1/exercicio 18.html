@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Cachaça 51</h2>
+    <div id="div_resetare">
+    <button onclick="resetarE()">Resetar escudos</button>
+    <img onclick="corinthians()" style="width: 170px;" src="https://www.mktesportivo.com/wp-content/uploads/2020/10/corinthians.jpg" ></img>
+    <img onclick="saopaulo()" style="width: 100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/1027px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png" ></img>
+    <img onclick="palmeiras()" style="width: 100px;" src="https://i.pinimg.com/originals/15/d2/ed/15d2edb390b25233fe4aca34bd4415c5.jpg">
+        </div><br><br>
+        <br>
+    <button onclick="resetar()">Resetar programa</button>
+    <button onclick="mostrarb()">Mostrar botão</button>
+    <div id="div_cachaca51"></div>
+    </div>
+</body>
+</html>
+<script>
+    function corinthians()
+    {
+        div_cachaca51.innerHTML += '<img style="width:100px" src="taça.jfif"></img><img  style="width:100px"src="taça.jfif"></img><br>'
+    }
+    function saopaulo()
+    {
+        div_cachaca51.innerHTML += '<img style="width:100px" src="taça.jfif"></img><img style="width:100px" src="taça.jfif"></img><img style="width:100px" src="taça.jfif"></img> <br>'
+    }
+    function palmeiras()
+    {
+        div_cachaca51.innerHTML += '<img style="width:100px" src ="mundial palmeiras.jfif"> </img>'
+    }
+    function resetar() 
+    {
+        div_cachaca51.innerHTML -= 'resetar'
+    }
+
+    function resetarE() 
+    {
+        div_resetare.innerHTML = ''
+    }
+    function mostrarb()
+    {
+        div_resetare.innerHTML += '<div id="div_resetare"><button onclick="resetarE()">Resetar escudos</button><img onclick="corinthians()" style="width: 170px;" src="https://www.mktesportivo.com/wp-content/uploads/2020/10/corinthians.jpg" ></img><img onclick="saopaulo()" style="width: 100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/1027px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png" ></img><img onclick="palmeiras()" style="width: 100px;" src="https://i.pinimg.com/originals/15/d2/ed/15d2edb390b25233fe4aca34bd4415c5.jpg"></div>'
+    }
+</script>
