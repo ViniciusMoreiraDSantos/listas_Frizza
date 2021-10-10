@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a altura do usuário:
+    <br>
+    <input type="text" name="" id="ipt_altura">
+    <br>
+    <button onclick="altura()">Verificar</button>
+</body>
+</html>
+<script>
+    function altura(){
+        var piloto = ipt_altura.value < 1.60;
+        var velejador = ipt_altura.value < 1.60;
+        var fut_hand = ipt_altura.value >= 1.60 && ipt_altura.value <= 1.85;
+
+
+
+        if(piloto || valejador){
+            alert('Pode tentar ser piloto(a) de corrida')
+            alert('Pode tentar ser velejador(a)')
+        }
+
+
+        else if (fut_hand){
+            alert('Pode tentar ser jogador de futebol ou handbol')
+        }
+    }
+</script>
