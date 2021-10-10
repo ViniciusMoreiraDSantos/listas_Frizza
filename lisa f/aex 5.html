@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        Qual a hora do dia você costuma:
+        <br>
+        <input type="text" id="netflix">
+        <br>
+        <button onclick="hora()"></button>
+</body>
+</html>
+<script> 
+function hora(){
+    if (netflix.value >= 19 && netflix.value <= 21)
+    {
+        alert('Horário não recomendado')
+
+    }
+    else
+    {
+        alert('Hoário bom ')
+    }
+}
+</script>

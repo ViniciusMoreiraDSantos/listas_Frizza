@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a nota do usuário:
+    <br>
+    <input type="text" id="nota">
+    <br>
+    <button onclick="verificar()">Avaliar aluno</button>
+
+</body>
+</html>
+
+<script>
+    function verificar()
+    {
+    if(nota.value < 6)
+    {
+        alert('Aluno não aprovado');
+    }
+     else if (nota.value >= 6 && nota.value <= 8.5)
+    {
+        alert('Aluno comum  e aprovado');
+    }  
+    else if(nota.value >= 8.5 && nota.value <=10)
+    {
+        alert('Aluno exemplar');
+    }
+
+   
+}
+</script>

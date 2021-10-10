@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="tela_inicial" style="display: block;">
+        <H3>Pilotos</H3>
+        Altura inicial:
+        <br>
+        <input type="text" id="altura">
+        <br>
+        Altura final 
+        <br>
+        <input type="text" id="altura_final">
+        <h3>Jogadores de basquete</h3>
+        Altura inicial:
+        <br>
+        <input type="text" id="alturabasquete_i">
+        <br>
+        Altura final
+        <br>
+        <input type="text" id="alturabasquete_f"><br>
+    <button onclick="seleciona()">Selecionar</button>
+    </div>
+
+    <div style="display: none;" id="tela_candidato">
+
+        Qual a altura do candidato:
+        <h2>Processo de Seleção de novos atletas</h2> 
+        <br>  
+        Critério de Seleção de piloto – Altura entre <span id="altura_i_p"></span> até <span id="altura_f_p"></span>
+        <br> 
+        Critério de Seleção de jogador de basquete – altura entre <span id="altura_i_b"></span> até <span id="altura_f_b"></span>
+        <BR>
+        Qual o nome do candidato:
+        <input type="text" id="nome_cand">
+        Qual a altura do candidato:
+        <input type="text" id="altura_cand">
+        <br>
+
+        <select name="" id="modalidade_altura" onclick="modalidade()">
+            <option selected disabled value="">Selecione uma modalidade</option>
+            <option value="piloto">Piloto</option>
+            <option value="basquete">Jogador de basquete</option>
+        </select>
+        <div id="candidato_valor">
+
+        </div>
+    </div>
+</body>
+</html>
+<script> 
+        function seleciona()
+        {
+            if(altura.value > 1 && altura_final.value > altura.value)
+            {   tela_inicial.style.display = 'none'
+                tela_candidato.style.display = 'block';}
+            else{
+                alert('NÃO SEGUIR EM FRENTE')
+            }
+            altura_i_p.innerHTML = altura.value;
+            altura_f_p.innerHTML = altura_final.value;
+            altura_i_b.innerHTML = alturabasquete_i.value;
+            altura_f_b.innerHTML = alturabasquete_f.value; 
+        
+        }
+
+        function modalidade()
+        {
+            //piloto
+            if(modalidade_altura.value =='piloto' && altura_cand.value >= altura.value && altura_cand.value <= altura_final.value)
+            {
+                candidato_valor.innerHTML = `O candidato ${nome_cand.value} com altura de Altura ${altura_cand.value} participará do processo de seleção de piloto`
+            }
+            else
+            {
+                candidato_valor.innerHTML = `O candidato ${nome_cand.value} com altura de Altura ${altura_cand.value} não atende os requisitos`
+            }
+            // basquete 
+            if(modalidade_altura.value =='basquete' && altura_cand.value >= alturabasquete_i.value && altura_cand.value <= alturabasquete_f.value)
+            {
+                candidato_valor.innerHTML = `O candidato ${nome_cand.value} com altura de Altura ${altura_cand.value}participará do processo de seleção de basquete`
+            }
+
+            else if(modalidade_altura.value =='basquete' && altura_cand.value <= alturabasquete_i.value && altura_cand.value >= alturabasquete_f.value) 
+            { candidato_valor.innerHTML = `O candidato ${nome_cand.value} com altura de Altura ${altura_cand.value} não atende os requisitos`}
+        }
+</script>

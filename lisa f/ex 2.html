@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a renda do usuário:
+    <br>
+    <input type="text" id="renda">
+    <br>
+    Qual a renda familiar 
+    <br>
+    <input type="text" id="renda_familiar">
+    <button onclick="verificar()">Verificar ajuda</button>
+</body>
+</html>
+<script>
+    function verificar()
+    {
+        if (renda.value < 1050 && renda_familiar.value <2100) {
+            alert ('Você tera direito')
+        }
+        else{
+            alert ('você não tera direito')
+        }
+    }
+</script>

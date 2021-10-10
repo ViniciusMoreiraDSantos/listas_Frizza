@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body> media de notas dos alunos da bandtec:
+        <br>
+        <input type="text" id="notas">
+        <br>
+        media de frequência dos alunos da bandtec: 
+        <br>
+        <input type="text" id="freq">
+        <br>
+       <button onclick="media()">resultado</button>
+        <div id="div_media"></div>
+    </body>
+</html>
+<script>
+    function media() 
+    {
+
+        if (notas.value >= 6 && freq.value >= 75 )
+        {
+            div_media.innerHTML =  'Aprovado';
+        } 
+
+        else 
+        {
+            div_media.innerHTML = 'Reprovado';
+        }
+    }
+</script>
