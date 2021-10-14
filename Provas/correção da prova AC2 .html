@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SDA</h1>
+    <br>
+    Quantidade: <input type="text" name="" id="qtdcamiseta">
+    <br>
+    <select name="" id="tamanho">
+        <option selected disabled value=""> -- Selecione um tamanho --</option>
+        <option value="pequeno">Pequeno</option>
+        <option value="grande">Grande</option>
+    </select>
+    <br>
+    <select name="" id="cor">
+        <option selected disabled value=""> -- Selecione uma cor -- </option>
+        <option  value="colorida">Colorida</option>
+        <option value="branca">Branca</option>
+    </select>
+    <br>
+    Distância: <input type="number" id="distancia">
+    <br>
+    <div id="idBotao" style="display: block;">
+        <button onclick="orcar()">Orçar</button>
+    </div>
+    <div id="div_orcamento" style="display: none;">
+        Orçamento de vendas
+        <br>
+        <br>
+        <br>
+        Quantidade Solicitada: <span id="qtdsol"></span>
+        <br>
+        Produto Selecionado: <span id="prodsl"></span>
+        <br>
+        Tamanho Selecionado: <span id="tamanhosl"></span>
+        <br>
+        O valor total das mercadorias é de R$ <span id="total"></span>
+        <br>
+        Para essa distância será cobrado um adicional de R$ <span id="frete"></span> para entrega 
+        <br>
+        <button onclick="comprar()">Comprar</button>
+        <button onclick="novoOrcamento()">Novo Orçamento</button>
+    </div>
+</body>
+</html>
+<script>
+    var qntdd = 0;
+    var dist = 0;
+    var valortotalmerc = 0;
+
+    function orcar(){
+        qntdd = qtdcamiseta.value;
+        dist = distancia.value;
+    
+        if(qntdd < 100){
+            alert('Vendemos somente no atacado');
+
+        }
+
+        else if (qntdd > 2000){
+            alert('Consulte nosso PCP')
+        }
+
+        else if (dist == 0){
+            alert('Distância inválida')
+        }
+        else{
+            idBotao.style.display = 'none';
+            div_orcamento.style.display = 'block'
+
+
+            if(tamanho.value == 'pequeno' && cor.value == 'branca'){
+                valortotalmerc = qntdd * 15
+                qtdsol.innerHTML = qntdd;
+        prodsl.innerHTML = tamanho.value;
+        tamanhosl.innerHTML = tamanho.value;
+        total.innerHTML = valortotalmerc;
+
+            }
+            
+            
+            else if(tamanho.value == 'grande' && cor.value == 'branca'){
+                valortotalmerc = qntdd * 16
+                qtdsol.innerHTML = qntdd;
+        prodsl.innerHTML = tamanho.value;
+        tamanhosl.innerHTML = tamanho.value;
+        total.innerHTML = valortotalmerc;
+
+            }
+       
+            
+            
+            else if(tamanho.value == 'pequeno' && cor.value == 'colorida'){
+                valortotalmerc = qntdd * 17
+                qtdsol.innerHTML = qntdd;
+        prodsl.innerHTML = tamanho.value;
+        tamanhosl.innerHTML = tamanho.value;
+        total.innerHTML = valortotalmerc;
+
+            }
+
+            
+            
+            else if(tamanho.value == 'grande' && cor.value == 'colorida'){
+                valortotalmerc = qntdd * 18
+                 
+                qtdsol.innerHTML = qntdd;
+        prodsl.innerHTML = tamanho.value;
+        tamanhosl.innerHTML = tamanho.value;
+        total.innerHTML = valortotalmerc;
+
+            }
+
+// distancia validação
+            if(tamanho.value == 'pequeno' && cor.value == 'branca' && dist >= 67 ){
+                valortotalmerc = qntdd * 15
+                var valoradd = valortotalmerc * 0.07 
+                qtdsol.innerHTML = qntdd;
+        prodsl.innerHTML = tamanho.value;
+        tamanhosl.innerHTML = tamanho.value;
+        total.innerHTML = valortotalmerc;
+        frete.innerHTML = valoradd.toFixed(2);
+
+            }
+            
+            
+            else if(tamanho.value == 'grande' && cor.value == 'branca' && dist >= 67 ){
+                valortotalmerc = qntdd * 16
+                var valoradd = valortotalmerc * 0.07 
+                qtdsol.innerHTML = qntdd;
+        prodsl.innerHTML = tamanho.value;
+        tamanhosl.innerHTML = tamanho.value;
+        total.innerHTML = valortotalmerc;
+        frete.innerHTML = valoradd.toFixed(2)
+            }
+       
+            
+            
+            else if(tamanho.value == 'pequeno' && cor.value == 'colorida' && dist >= 67){
+                valortotalmerc = qntdd * 17
+                var valoradd = valortotalmerc * 0.07 
+                qtdsol.innerHTML = qntdd;
+        prodsl.innerHTML = tamanho.value;
+        tamanhosl.innerHTML = tamanho.value;
+        total.innerHTML = valortotalmerc;
+        frete.innerHTML = valoradd.toFixed(2);
+
+            }
+
+            
+            
+            else if(tamanho.value == 'grande' && cor.value == 'colorida' && dist >= 67){
+                valortotalmerc = qntdd * 18
+                var valoradd = valortotalmerc * 0.07 
+                qtdsol.innerHTML = qntdd;
+        prodsl.innerHTML = tamanho.value;
+        tamanhosl.innerHTML = tamanho.value;
+        total.innerHTML = valortotalmerc;
+        frete.innerHTML = valoradd.toFixed(2);
+
+            }
+        
+        
+        
+        
+        
+        }
+
+
+
+        
+    }
+
+    function comprar(){
+        var bonus = Math.random() * 2 + 2.5
+        var bonusbruto = (valortotalmerc * bonus)/100;
+        alert('PARABÉNS!!! Você recebeu um bônus de '+ bonus.toFixed(1) +'%, na sua próxima compra você terá um bônus de R$'+ bonusbruto.toFixed(2))
+    }
+
+    function novoOrcamento(){
+        valortotalmerc = 0;
+        dist = 0;
+        qntdd = 0;
+        div_orcamento.style.display = 'none';
+        idBotao.style.display = 'block'
+    }
+</script>
