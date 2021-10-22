@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="ipt_usuario">
+    <br>
+    <button onclick="executar()">Exibir rotina mensal</button>
+    <br>
+    <span id="sp_mensal"></span>
+</body>
+</html>
+<script>
+    function executar(){
+        var contadorX = 1;
+        var contadorDias = 0 
+        var contadorY = Number(ipt_usuario.value);
+
+        sp_mensal.innerHTML += '<b>Dia 1 - Musculação</b><br>'
+        
+        while(contadorX < 30){
+            contadorX++
+            contadorDias++
+            if(contadorY == contadorDias ){
+                sp_mensal.innerHTML += ' <b>Dia'+contadorX+ '- Musculação</b><br>'
+                contadorDias = 0;
+            }
+            else{
+                
+                sp_mensal.innerHTML += 'Dia'+contadorX+' - Comer, dormir etc <br>'
+            }
+        }
+    }
+</script>

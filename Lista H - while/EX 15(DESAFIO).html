@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_elefante">
+    <br>
+    <button onclick="executar()">Atazanar Médium</button>
+    <br>
+    <span id="sp_mostrar"></span>
+</body>
+</html>
+<script>
+    function executar(){
+        var contadorX = 0
+        var contadorY = Number(ipt_elefante.value);
+        sp_mostrar.innerHTML = '';
+        while(contadorX < contadorY){
+            contadorX ++
+            sp_mostrar.innerHTML += '1 elefante incomoda muita gente!<br>';
+            var contadorElefante = 0;
+            sp_mostrar.innerHTML += contadorX + ' elefantes, '
+            while(contadorElefante < contadorX){
+                contadorElefante++
+                sp_mostrar.innerHTML += 'incomodam,';
+            }
+            sp_mostrar.innerHTML += ' muito mais<br>';
+        }
+    }
+</script>

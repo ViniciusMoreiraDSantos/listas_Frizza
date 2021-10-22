@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="ipt_usuario">
+    <br>
+    <button onclick="multiplicar()">Adoro múltiplos de 5</button>
+    <br>
+    <span id="sp_mostrar"></span>
+</body>
+</html>
+<script>
+    function multiplicar(){
+        var contadorX = 0;
+        var contadorY = ipt_usuario.value;
+        if(contadorY >= 20 && contadorY <=100){
+
+            while(contadorX <= contadorY){
+                if(contadorX %5 ==0){
+                    sp_mostrar.innerHTML += contadorX + '<br>';
+                }
+                contadorX++
+            }
+        }
+        else{
+            alert('somente numeros entre 20 e 100')
+        }
+        }
+    
+</script>

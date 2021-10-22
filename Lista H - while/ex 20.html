@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="executar()">Curto 3 e 5!</button>
+    <br>                
+    <span id="sp_mostrar"></span>
+</body>
+</html>
+<script>
+    function executar(){
+        var contadorX = 0
+        while(contadorX < 100){
+            contadorX++
+            if (contadorX %3 == 0){
+                sp_mostrar.innerHTML += 'É TRI!<br>';
+            }
+            else if (contadorX %5 == 0){
+                sp_mostrar.innerHTML += 'É PENTA!<br>';
+            }
+
+            else if(contadorX %3 == 0 && contadorX %5 == 0){
+                sp_mostrar.innerHTML += 'É TRI!É PENTA!<br>'; 
+            }
+            else{
+                sp_mostrar.innerHTML += contadorX+ '<br>';
+            }
+        }
+    }
+</script>
