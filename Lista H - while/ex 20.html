@@ -17,16 +17,17 @@
         var contadorX = 0
         while(contadorX < 100){
             contadorX++
-            if (contadorX %3 == 0){
+            if(contadorX %3 == 0 && contadorX %5 == 0){
+                sp_mostrar.innerHTML += 'É TRI!É PENTA!<br>'; 
+            }
+            else if (contadorX %3 == 0){
                 sp_mostrar.innerHTML += 'É TRI!<br>';
             }
             else if (contadorX %5 == 0){
                 sp_mostrar.innerHTML += 'É PENTA!<br>';
             }
 
-            else if(contadorX %3 == 0 && contadorX %5 == 0){
-                sp_mostrar.innerHTML += 'É TRI!É PENTA!<br>'; 
-            }
+            
             else{
                 sp_mostrar.innerHTML += contadorX+ '<br>';
             }

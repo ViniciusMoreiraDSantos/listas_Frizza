@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="principal" style="display: block;">
+
+        <input type="text" name="" id="nmrsorteio">
+        <br>
+        <input type="text" id="divisibilidade">
+        <br>
+        <button onclick="sortear()">Sortear</button>
+        <br>
+        <span id="sp_mostrar"></span>
+    </div>
+    <div id="secundaria">
+
+    </div>
+</body>
+</html>
+<script>
+    function sortear(){
+
+        if(nmrsorteio.value < 10 && nmrsorteio.value > 50){
+            alert('Digite um número válido');
+        }
+        else if(divisibilidade.value < 1 && divisibilidade.value > 10){
+            alert('digite um número divisível válido')
+        }
+        else{
+            var random = 0
+            var contador = 0
+            while(contador < nmrsorteio.value){
+                contador++;
+                random = Math.random() * 99 + 1 ;
+            }
+                principal.display = 'none'
+                secundaria.display = 'block'
+            // secundaria.innerHTML = random;
+            if(random.toFixed() %divisibilidade.value == 0){
+                random =  
+                secundaria.innerHTML = '  O maior número sorteado foi: '+ +' <br>O menor número sorteado foi: '+ +' <br>A média de todos os números sorteados é: 99,99'
+                
+            }
+        }
+    }
+</script>
