@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos Ônibus precisa pegar?
+    <br>
+    <input type="text" name="" id="qtdbus">
+    <br>
+    Quantos trens precisa pegar?<br>
+    <input type="text" name="" id="qtdtrem">
+    <br>
+    Quantos metrôs precisa pegar?
+    <br>
+    <input type="text" name="" id="qtdmetro">
+    <br>
+    <button onclick="exec()">#PARTIU TRAJETO</button>
+    <br>
+    <span id="mostrar"></span>
+</body>
+</html>
+<script>
+    function exec(){
+        var contadorY = 0;
+        var contadorZ = 0;
+        var contadorL = 0;
+        var contadorqtdY = Number(qtdbus.value);
+        var contadorqtdZ = Number(qtdtrem.value);
+        var contadorqtdL = Number(qtdmetro.value);
+        
+        if(contadorqtdY > 0){
+            while(contadorY < contadorqtdY ){
+                contadorY++
+                mostrar.innerHTML += '<span style="color: red;"> Pegando o ' + contadorY +'º Busão</span>'
+                console.log(contadorY)
+                if(contadorY == 2){
+                    mostrar.innerHTML += 'Começando a cansar'
+                }
+                else if (contadorY >= 3){
+                    mostrar.innerHTML += 'Já cansado!'
+                }
+                mostrar.innerHTML += '<br>'
+                
+            }
+        }
+
+        if(contadorqtdZ > 0){
+            while(contadorZ < contadorqtdZ){
+                contadorZ++
+                mostrar.innerHTML += '<span style="color: green;"> Pegando o ' + contadorZ +'º Trem</span>'
+                console.log(contadorZ)
+                if(contadorZ == 2){
+                    mostrar.innerHTML += 'Começando a cansar'
+                }
+                else if (contadorZ >= 3){
+                    mostrar.innerHTML += 'Já cansado!'
+                }
+                mostrar.innerHTML += '<br>'
+            }
+        }
+        
+            if(contadorqtdL > 0){
+
+                while(contadorL < contadorqtdL){
+                    contadorL++
+                    mostrar.innerHTML += '<span style="color: blue;"> Pegando o ' + contadorL +'º Metrô</span>'
+                    console.log(contadorL)
+                    if(contadorL == 2){
+                        mostrar.innerHTML += 'Começando a cansar'
+                    }
+                    else if (contadorL >= 3){
+                        mostrar.innerHTML += 'Já cansado!'
+                    }
+                    mostrar.innerHTML += '<br>'
+                }
+            }
+        }
+    
+</script>

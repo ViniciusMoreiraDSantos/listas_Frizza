@@ -7,45 +7,76 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="principal" style="display: block;">
-
-        <input type="text" name="" id="nmrsorteio">
-        <br>
-        <input type="text" id="divisibilidade">
-        <br>
-        <button onclick="sortear()">Sortear</button>
-        <br>
-        <span id="sp_mostrar"></span>
+    <div id="telaInicial" style="display: block;">
+    Informe a quantidade de numeros que serão sorteados:
+    <br>
+    <input type="text" name="" id="sorteados">
+    <br>
+    Informe a divisibilidade deles:
+    <br>
+    <input type="text" name="" id="divisibilidade">
+    <br>
+    <button onclick="exec()">Sortear</button>
     </div>
-    <div id="secundaria">
+    <div id="Secundaria" style="display: none;">
+        Numeros sorteados: <div id="nmrS"> </div>
+        <br>
+        O maior número sorteado foi: <span id="maior"></span>
+        <br>
+        O menor número sorteado foi: <span id="menor"></span> 
+        <br>
+        A média de todos os números sorteados é:<span id="media"></span>
 
     </div>
 </body>
 </html>
 <script>
-    function sortear(){
-
-        if(nmrsorteio.value < 10 && nmrsorteio.value > 50){
-            alert('Digite um número válido');
+    
+    function exec(){
+        if(sorteados.value < 10 && sorteados.value > 50){
+            alert('digite um número entre 10 e 50')
         }
         else if(divisibilidade.value < 1 && divisibilidade.value > 10){
-            alert('digite um número divisível válido')
+            alert('digite um número entre 1 e 10')
         }
         else{
-            var random = 0
-            var contador = 0
-            while(contador < nmrsorteio.value){
-                contador++;
-                random = Math.random() * 99 + 1 ;
-            }
-                principal.display = 'none'
-                secundaria.display = 'block'
-            // secundaria.innerHTML = random;
-            if(random.toFixed() %divisibilidade.value == 0){
-                random =  
-                secundaria.innerHTML = '  O maior número sorteado foi: '+ +' <br>O menor número sorteado foi: '+ +' <br>A média de todos os números sorteados é: 99,99'
+            telaInicial.style.display = 'none';
+            Secundaria.style.display = 'block';
+            var menorNmr = 100;
+            var maiorNmr = 0;
+            var menmr = 0;
+            var contador = 0;
+            var divi = Number(divisibilidade.value)
+            var sort = Number(sorteados.value)
+            
+            while(contador < sort){
+                contador++
+                random = Math.random() * 99 + 1
+                menmr += random;
+
+                if(random %divi == 0){
+                    nmrS.innerHTML += `<span style="background-color: red;">${random.toFixed()}</span><br>` 
+                }
+                else{
+                    nmrS.innerHTML += `<br>${random.toFixed()}` 
+                }
+
+                if(random > maiorNmr){
+                    maiorNmr = random 
+                }  
+               
+                if(random < menorNmr){
+                    menorNmr = random 
+                }  
+                media.innerHTML = `${menmr.toFixed() / sort.toFixed()}`;
+                maior.innerHTML = maiorNmr.toFixed(); 
+                menor.innerHTML = menorNmr.toFixed();  
                 
-            }
+                
+                
+            } 
         }
+    
+
     }
 </script>

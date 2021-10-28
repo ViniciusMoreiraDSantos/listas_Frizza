@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número de 2 a 9
+    <select name="" id="nmrtabu">
+        <option selected disabled value=""> -- Selecione um Numero -- </option>
+        <option value=2 >2</option>
+        <option value=3 >3</option>
+        <option value=4 >4</option>
+        <option value=5 >5</option>
+        <option value=6 >6</option>
+        <option value=7 >7</option>
+        <option value=8 >8</option>
+        <option value=9 >9</option>
+    </select>
+    <br>
+    Digite um número limite
+    <input type="text" name="" id="nmrlimite">
+    <br>
+    <button onclick="exec()">Ver tabuada</button>
+    <br>
+    <span id="mostrar"></span>
+</body>
+</html>
+<script>
+    function exec(){
+        var contador1 = 0
+        var nmrTabuada = Number(nmrtabu.value)
+        var nmrLi = Number(nmrlimite.value)
+
+        while(contador1 < nmrLi){
+            contador1++ 
+            mostrar.innerHTML += nmrTabuada + 'X' + contador1 + ' = '
+          
+                var resultado = nmrTabuada * contador1;
+               
+                mostrar.innerHTML += resultado + '<br>'
+        
+            var resultado = 0
+        }
+    }
+</script>
