@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="iptini">
+    <br>
+    <input type="text" name="" id="iptMostrar" >
+    <br>
+    <input type="text" name="" id="iptdivi">
+    <br>
+    <button onclick="exec()">Executar</button>
+    <br>
+    <span id="mostrar"></span>
+</body>
+</html>
+<script>
+    function exec(){
+        var ini = Number(iptini.value);
+        var entrada = Number(iptMostrar.value);
+        var div = Number(iptdivi.value);
+        mostrar.innerHTML = ''
+        for( ini ; ini <= entrada; ini++){
+            if(ini %div == 0 ){
+              
+                mostrar.innerHTML += ini + '<br>'
+            }
+            
+        }
+    }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número:
+    <input type="text" name="" id="inicial">
+    <br>
+    Digite um número
+    <input type="text" name="" id="final">
+    <br>
+    <button onclick="exec()">Executar</button>
+    <br>
+    <span id="mostrar"></span>
+</body>
+</html>
+<script>
+    function exec(){
+        var ini = Number(inicial.value);
+        var fim = Number(final.value);
+        mostrar.innerHTML = ''
+        for(ini; ini <= fim ; ini++){
+            mostrar.innerHTML += ini + '<br>';
+        }
+    }
+</script>
