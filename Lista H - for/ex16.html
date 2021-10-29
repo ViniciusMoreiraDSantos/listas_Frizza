@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos depósitos?
+    <br>
+    <input type="text" name="" id="qtdDeposito">
+    <br>
+    Valor depósitos?
+    <br>
+    <input type="text" name="" id="valoript">
+    <br>
+    <button onclick="exec()">Acompanhar Grana</button>
+    <br>
+    <span id="mostrar"></span>
+</body>
+</html>
+<script>
+    function exec(){
+        var total = 0
+        var valorMes = 0;
+        var deposito = Number(qtdDeposito.value)
+        var valor = Number(valoript.value)
+        var bonus = 0
+        for(cont = 1; cont <= deposito; cont++){
+            valorMes += valor * cont
+            if(cont %3 == 0){
+            var bonus
+            bonus += valorMes * 0.01
+            bonusTotal = bonus + valorMes
+            mostrar.innerHTML += cont + 'ºMês: R$' + bonusTotal + '<br>'
+            }
+            else{
+            mostrar.innerHTML += cont + 'ºMês: R$' + valorMes + '<br>'
+            }
+            valorMes = 0
+            
+            
+            
+        }
+        mostrar.innerHTML += 'Valor acumulado:' + total
+    }
+</script>

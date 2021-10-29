@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Turfe Amigo</h1>
+Cavalo 1
+<br>
+<input type="text" name="" id="nomeC">
+<br>
+Cavalo 2
+<br>
+<input type="text" name="" id="nomeC1">
+<br>
+Cavalo 3
+<br>
+<input type="text" name="" id="nomeC2">
+<br>
+Número de voltas
+<br>
+<input type="text" name="" id="voltas">
+<br>
+Tempo Minimo:
+<br>
+<input type="text" name="" id="Minimo">
+<br>
+Tempo Máximo
+<br>
+<input type="text" name="" id="maximo">
+<br>
+<button onclick="turfe()">Iniciar Turfe</button>
+<br>
+<span id="mostrar"></span>
+<span id="ranking" style="display: none;"> 
+    Em 1º Lugar – Cavalo: <span id="melhores"></span>
+    <br>
+    Em 2º Lugar – Cavalo: <span id="melhores2"></span>
+    <br>
+    Em 3º Lugar – Cavalo: <span id="melhores3"></span>
+</span>
+
+</body>
+</html>
+<script>
+    function turfe(){
+       ranking.style.display = 'block'
+        var cavalo1 = 0;
+        var cavalo2 = 0;
+        var cavalo3 = 0;
+        var totalC1 = 0
+        var totalC3 = 0
+        var totalC2 = 0
+        var nome1 = nomeC.value
+        var nome2 = nomeC1.value
+        var nome3 = nomeC2.value
+        var qtdvoltas = Number(voltas.value)
+        var max = Number(maximo.value)
+        var min = Number(Minimo.value)
+        for(var contador = 1; contador <= qtdvoltas; contador++){
+            
+                mlhr = cavalo1 + cavalo2 + cavalo3
+                cavalo1 = Math.random() * 2 + 7;
+                totalC1 += cavalo1
+                cavalo2 += Math.random() * 2 + 7;
+                totalC2 += cavalo2
+
+                cavalo3 += Math.random() * 2 + 7;
+                totalC3 += cavalo3
+
+                mostrar.innerHTML += 'Volta '+ contador + ' <br> '+ nome1 +'-- '+ cavalo1.toFixed(1)+' -- ' + totalC1.toFixed(1) +' -- '+nome2+' -- '+ cavalo2.toFixed(1) + ' -- ' + totalC2.toFixed() +' -- '+nome3+' -- ' + cavalo3.toFixed(1) +' -- '+ totalC3.toFixed(1) +'<br>'
+                
+                cavalo1 = 0
+                cavalo2 = 0
+                cavalo3 = 0
+             if(totalC1 > totalC2 && totalC1> totalC3 ){
+                 melhores.innerHTML = nome1
+
+             }
+            if(totalC1 <= totalC2 && totalC1 >= totalC3 ){
+                 melhores2.innerHTML = nome1
+
+             }
+            if(totalC1 < totalC2 && totalC1< totalC3 ){
+                 melhores3.innerHTML = nome1
+
+             }
+            // cavalo 2
+            if(totalC2 > totalC1 && totalC2 > totalC3 ){
+                 melhores.innerHTML = nome2
+
+             }
+             
+
+            if(totalC2 <= totalC1 && totalC2 >= totalC3 ){
+                 melhores2.innerHTML = nome2
+                 
+             }
+             
+            if(totalC2 < totalC1 && totalC2 < totalC3 ){
+                 melhores3.innerHTML = nome2
+                 
+             }
+             
+            // cavalo 3
+
+            if(totalC3 > totalC2 && totalC3 > totalC1 ){
+                 melhores.innerHTML = nome3
+
+             } 
+            
+            if(totalC3 <= totalC2 && totalC3 >= totalC1 ){
+                 melhores2.innerHTML = nome3
+
+             } 
+
+            if(totalC3 < totalC2 && totalC3 < totalC1 ){
+                 melhores3.innerHTML = nome3
+
+             } 
+
+        }
+    }
+</script>
