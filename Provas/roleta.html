@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Em qual numero vai ser a sua aposta? <input type="text" id="apostaN">
+    <br>
+    Em qual cor você vai apostar <input type="text" id="apostaC">
+    <br>
+    qual o valor da sua aposta por rodada <input type="text" name="" id="apostaR">
+    <br>
+    quantas rodadas você quer participar <input type="text" name="" id="ApostaPAR">
+    <br>
+    <button onclick="exec()">Roletar</button>
+    <span id="mostrar"></span>
+</body>
+</html>
+<script>
+    // cor = 20% da aposta (vezes 0.2)
+    // numero = 300% da aposta (vezes 3 )
+    // numero e cor = 1000% da aposta (vezes 10)
+    // cores = amarelo, vermelho, verde
+    // nenhuma das possiblidades = ( - 10%)
+    function exec(){
+        var numero = Number(apostaN.value)
+        var cor = ''
+        var corUsu = apostaC.value 
+        var valor = Number(apostaR.value)
+        var rodada = Number(ApostaPAR.value)
+        var saldo = 0
+        if( numero <= 0 && numero >= 36){
+            alert('insira um numero valido')
+        }
+        else if(valor <=0 || valor > 100){
+            alert('apenas apostas acima de 1$ e abaixo de 100$')
+        }
+        else if(rodada <= 0){
+            alert('aposte pelo menos uma rodada')
+        }
+        else if ( apostaC.value == 'vermelho' || apostaC.value == 'amarelo' || apostaC.value == 'verde'){
+            
+            mostrar.innerHTML = `<H1>Roleta Amigo</H1> <br> sua aposta de $${valor} foi no ${numero} e na cor ${corUsu} <br>`
+            
+            for(var contador = 1; contador <= rodada; contador++){
+                var cor = ''
+                randomCOR = 0 
+                var randomCOR = (Math.random()).toFixed(1)
+                var RandomS = (Math.random() * 35 + 1).toFixed()
+                console.log(randomCOR) 
+                console.log(valor)
+                if(randomCOR <= 0.3){
+                    cor += 'vermelho'
+                }
+                else if(randomCOR <= 0.6 ){
+                    cor += 'amarelo'
+                }
+                else if(randomCOR <= 0.9){
+                    cor += 'verde'
+                }
+                
+                if(cor == corUsu && numero != RandomS){
+                bonus = valor * 0.2 
+                valor += bonus
+                saldo += valor
+                    mostrar.innerHTML += `${contador}º sorteio - cor ${cor}, numero ${RandomS} -  você ganhou ${valor.toFixed()} seu saldo ${saldo.toFixed()}<br>`
+                    
+                    
+                }
+                if(cor != corUsu && numero == RandomS){
+                    bonus += valor * 3 
+                    valor += bonus
+                    saldo += valor
+                    mostrar.innerHTML += `${contador}º sorteio - cor ${cor}, numero ${RandomS} -  você ganhou ${valor.toFixed()} seu saldo ${saldo.toFixed()}<br>`
+                }
+                if(cor == corUsu && numero == RandomS){
+                    bonus = valor * 10
+                    valor += bonus
+                    saldo += valor
+                    mostrar.innerHTML += `${contador}º sorteio - cor ${cor}, numero ${RandomS} - Parabéns!!!! você ganhou ${valor.toFixed()} seu saldo ${saldo.toFixed()}<br>`
+                }
+                
+                if(cor != corUsu && numero != RandomS){
+                    bonus = valor * 0.1 
+                    valor -=  bonus
+                saldo += valor
+                mostrar.innerHTML += `${contador}º sorteio - cor ${cor}, numero ${RandomS} -  você perdeu ${valor.toFixed()} seu saldo ${saldo.toFixed()}<br>`
+            }
+
+            
+            }
+        }
+        else{
+            alert('insira uma cor valida')
+        }
+    }
+    // mostrar.innerHTML += `${contador}º sorteio - cor ${cor}, numero ${num} -  `
+
+</script>
