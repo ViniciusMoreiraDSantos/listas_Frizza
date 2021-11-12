@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="bairros">
+    <br>
+    <input type="text" name="" id="rele">
+    <br>
+    <button onclick="relembrar()">Relembrar Moradia</button>
+    <button onclick="exec()">Cadastrar</button>
+    <br>
+    <span id="mostrar"></span>
+</body>
+</html>
+<script> 
+    var brr = []
+
+    function exec(){
+        brr.push(bairros.value);
+        bairros.value = '';
+        console.log("f")
+
+
+    }
+
+    function relembrar(){
+        var rel = Number(rele.value)
+        
+        if(brr.length > rel){
+            mostrar.innerHTML += `${brr[rel -1]}<br>`
+        }
+        else {
+            mostrar.innerHTML = `voce não morou nesse lugar ainda`
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="filme">
+    <br>
+    <button onclick="exec()">Cadastrar</button>
+    <br>
+    <span id="mostrar"></span>
+</body>
+</html>
+<script>
+    var vtfilme = []
+    function exec(){
+        
+        var fil = filme.value
+        vtfilme.push(fil);
+        fil = '';
+        mostrar.innerHTML = '';
+        var ini = 0
+        mostrar.innerHTML = ''
+        for( ini == vtfilme.length -1 ; vtfilme.length <= 0; ini--){
+
+            mostrar.innerHTML += `${vtfilme[ini]}<br>`
+
+        }
+    }
+</script>

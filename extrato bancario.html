@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrato Bancário</title>
+</head>
+
+<body>
+    <div id="tela_1">
+        <h1>Extrato Bancário</h1>
+        Nome do Cliente: <input id="ipt_nome" placeholder="Insira seu nome"><br>
+        Banco: <input id="ipt_banco" placeholder="Insira seu banco"><br>
+        Agência: <input id="ipt_agencia" placeholder="Insira sua agência"><br>
+        Conta: <input id="ipt_conta" placeholder="Insira sua conta"><br>
+        Dígito: <input id="ipt_digito" placeholder="Insira seu digito">
+        <br><br>
+        <button onclick="entrar()">Entrar</button>
+    </div>
+
+    <div id="tela_2" style="display: none;">
+
+        <select id="Selopcao">
+            <option value="escolha">Selecione uma Opção</option>
+            <option value="debito">Débito</option>
+            <option value="credito">Crédito</option>
+        </select><br>
+        Informe a data <input type="date" id="ipt_data" placeholder="Insira a data"><br>
+        Valor da movimentação: <input id="ipt_valor_mov" placeholder="Insira valor da movimentação">
+        <br><br>
+        <button onclick="extrato()">Extrato</button>
+        <button onclick="voltar()">mudar a conta</button>
+
+        <span id="resposta"></span>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var nome = '';
+    var banco = '';
+    var agencia = '';
+    var conta = '';
+    var digito = '';
+    function entrar() {
+        nome = ipt_nome.value;
+        banco = Number(ipt_banco.value);
+        agencia = Number(ipt_agencia.value);
+        conta = Number(ipt_conta.value);
+        digito = Number(ipt_digito.value);
+
+        if (nome < 3) { alert('Nome deve ter pelo menos 3 dígitos'); }
+        else if (banco != '001' && banco != '102' && banco != '237' && banco != '341') { alert('Banco invalido'); }
+        else if (agencia < 0 || agencia > 999) { alert('A agência tem que ser maior que 0 e menor que 999') }
+        else if (conta < 0 || conta > 9999) { alert('A conta tem que ser maior que 0 e menor que 9999') }
+        else if (digito != (conta % 11) % 10) { alert('O dígito está invalido'); }
+        else if (nome == '' || banco == '' || agencia == '' || conta == '' || digito == '') { alert('Preencha todos os campos'); }
+
+        if ((nome > 3) && (banco == '001' || banco == '102' || banco == '237' || banco == '341') && (agencia > 0 || agencia <= 999) && (conta > 0 || conta <= 9999) && (digito == (conta % 11) % 10)) {
+            tela_1.style.display = 'none';
+            tela_2.style.display = 'block'; }
+
+        function extrato() {
+
+            var opcao = Selopcao.value;
+            var data = ipt_data.value;
+            var movimentacao = Number(ipt_valor_mov.value);
+            var inicial = 0;
+            var final_cred = 0;
+            var final_deb = 0;
+
+            if (opcao == 'credito') {
+                final_cred = inicial + movimentacao;
+
+                resposta.innerHTML = `${data} - Saldo inicial R$${movimentacao}  ${opcao} R$${movimentacao} Saldo final= R$${final_cred.toFixed(2)}`;
+
+            }
+            else if (opcao == 'debito') {
+                final_deb = inicial - movimentacao;
+
+                resposta.innerHTML = ` ${data} - Saldo inicial R$${movimentacao}  ${opcao} R$${movimentacao} Saldo final= R$${final_deb.toFixed(2)}`;
+            }
+        }
+
+        function voltar() {
+            
+            tela_1.style.display = 'block';
+            nome = '';
+            banco = '';
+            agencia = '';
+            conta = '';
+            digito = '';
+
+        }
+
+    }
+
+</script>

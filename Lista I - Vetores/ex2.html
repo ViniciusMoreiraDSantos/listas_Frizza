@@ -13,7 +13,7 @@
     <br>
     <button onclick="a()"> Primeira viagem </button>
     <br>
-    <button onclick="b()"> Segunda Viagem </button>
+    <button onclick="b()"> Terceira Viagem </button>
     <br>
     <button onclick="c()"> Ultima Viagem </button>
     <br>    
@@ -31,20 +31,33 @@
     }
 
     function a(){
-        if(viagens != ''){
-            mostrar.innerHTML += `Seu primeiro destino é ${viagens[0]}<br>`
+        if(viagens.length <  1){
+            mostrar.innerHTML += "insira um destino<br>"
+            
         }
         else{
-            mostrar.innerHTML += "insira um destino"
+            mostrar.innerHTML += `Seu primeiro destino é ${viagens[0]}<br>`
         }
         
     }
 
     function b(){
-        mostrar.innerHTML += `Sua terceira viagem é ${viagens[2]}<br>`
-    }
+        if(viagens.length < 3){
+            mostrar.innerHTML += `insira um destino<br>`
+        }
+        else{
+
+            mostrar.innerHTML += `Sua terceira viagem é ${viagens[2]}<br>`
+            }
+        }
 
     function c(){
-        mostrar.innerHTML += `Sua ultima viagem é ${viagens[viagens.length -1]}<br>`
+        if(viagens[viagens.length > -1]){
+            mostrar.innerHTML += `ainda não viajou<br>`
+        }
+        else {
+
+            mostrar.innerHTML += `Sua ultima viagem é ${viagens[viagens.length -1]}<br>`
+        }
     }
 </script>
