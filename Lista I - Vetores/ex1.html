@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="ipt_frutas">
+    <br>
+    <button onclick="exec()">Pesquisar</button>
+   
+    <span id="mostrar"></span>
+</body>
+</html>
+<script>
+    var frutas = []
+    function exec(){
+        frutas = ["uva", "manga", "melancia", "abacaxi"]
+        var ipt = ipt_frutas.value
+        
+        if(frutas.indexOf(ipt) <= 0){
+            mostrar.innerHTML = `Não existe a fruta ${ipt_frutas.value} na lista`
+        
+        }
+
+        else{
+            mostrar.innerHTML = ` A fruta ${ipt_frutas.value } existe na lista`
+        }
+
+    }
+</script>

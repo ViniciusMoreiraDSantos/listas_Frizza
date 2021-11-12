@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="destino">
+    <br>
+    <button onclick="add()">Adicionar</button>
+    <br>
+    <button onclick="a()"> Primeira viagem </button>
+    <br>
+    <button onclick="b()"> Segunda Viagem </button>
+    <br>
+    <button onclick="c()"> Ultima Viagem </button>
+    <br>    
+    <span id="mostrar"></span>
+</body>
+</html>
+<script>
+    var viagens = [];
+    function add(){
+        viagens.push(destino.value);
+        destino.value = '';
+
+
+
+    }
+
+    function a(){
+        if(viagens != ''){
+            mostrar.innerHTML += `Seu primeiro destino é ${viagens[0]}<br>`
+        }
+        else{
+            mostrar.innerHTML += "insira um destino"
+        }
+        
+    }
+
+    function b(){
+        mostrar.innerHTML += `Sua terceira viagem é ${viagens[2]}<br>`
+    }
+
+    function c(){
+        mostrar.innerHTML += `Sua ultima viagem é ${viagens[viagens.length -1]}<br>`
+    }
+</script>
