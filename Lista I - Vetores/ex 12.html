@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual o nome de um filho seu?
+    <br>
+    <input type="text" name="" id="filho">
+    <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br>
+    <button onclick="atualizar()">Atualizar</button>
+    <span id="mostrar"></span>
+</body>
+</html>
+<script>
+    var vtfilho = [];
+    function cadastrar(){
+        
+        var fil = filho.value 
+        for (var i = 0; i <= vtfilho.length; ){
+            if (vtfilho.indexOf(fil) == -1){
+            vtfilho.push(fil);
+            alert("cadastrado")
+            }
+            else{
+                alert("Filho repetido")
+            }
+
+        }
+    }
+
+    function atualizar(){
+        var y = (vtfilho.length * 3000).toFixed(2);
+        var z = (vtfiho.length * 1500).toFixed(2);        
+        mostrar.innerHTML += `Você tem ${vtfilho.length} filhos<br>Seu custo mensal será aproximadamente R$${y} se colocar eles em escola particular ou R$${z} se eles estudarem em escola pública`
+    }
+</script>

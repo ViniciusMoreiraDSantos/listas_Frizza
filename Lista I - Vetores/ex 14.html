@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="nomeProd">
+    <br>
+    <input type="text" name="" id="precoProd">
+    <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br>
+    <button onclick="relatorio()">relatorio</button>
+    <br>
+    <span id="total"></span>
+    <br>
+    <span id="mostrar"></span>
+    
+</body>
+</html>
+<script>
+    var vtnome = [];
+    var vtpreco = [];
+    function cadastrar(){
+        var nome = nomeProd.value;
+        var preco = Number(precoProd.value);
+        if(nome == '' || preco == ''){
+            alert('insira dados validos')
+        }
+        else{
+            vtnome.push(nome);
+            vtpreco.push(preco);
+            precoProd.value = ''
+            nomeProd.value = '';
+        }
+    }
+    
+    function relatorio(){
+        
+        var qtd = 0 
+        total.innerHTML = `Total de produtos: ${vtpreco.length}`
+        mostrar.innerHTML = ''
+        for(var i = 0; i < vtnome.length; i++ ){
+            
+            if(vtnome.length == vtpreco.length)
+            qtd++
+            mostrar.innerHTML += `
+            <br>Produto ${qtd}: <br>${vtnome[i]}<br>
+            Preço de compra: R$${vtpreco[i]}.<br> Vender por R$${vtpreco[i] * 1.25}`
+        }
+    }
+        </script>

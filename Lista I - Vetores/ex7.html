@@ -17,21 +17,19 @@
 <script>
     var vtfilme = []
     function exec(){
+
+        var fil = filme.value
+        vtfilme.push(fil);
         fil = '';
-<<<<<<< HEAD
-        mostrar.innerHTML = "";
-        for (var index = vtfilme.length -1; index >= 0; index --) {
-         mostrar.innerHTML += `<br>${vtfilme[index]}`;  
-        
-=======
         mostrar.innerHTML = '';
-        var ini = 0
-        mostrar.innerHTML = ''
-        for( ini = vtfilme.length -1 ; ini >= 0; ini--){
+        for(var i = 0; i < vtfilme.length; i++){
+            if(i %2 == 1){
 
-            mostrar.innerHTML += `${vtfilme[ini]}<br>`
-
->>>>>>> 505e12f758c00e72a64f2389869e9e609fe46ece
+                mostrar.innerHTML += `<span style="color: blue">${vtfilme[i]}</span><br>`
+            }            
+            else{
+                mostrar.innerHTML += `<span style="color: red;">${vtfilme[i]}</span><br>`
+            }
         }
     }
 </script>

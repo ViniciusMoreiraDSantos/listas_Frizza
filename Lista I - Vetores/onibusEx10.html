@@ -1,0 +1,54 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onibus</title>
+</head>
+<body>
+    <label for="inputLinha">Insira o nome da linha de ônibus</label><br>
+    <input type="text" id="inputLinha"><br><br>
+
+    <button onclick="registrarLinha()">Gravar buzão</button>
+    <div id="textoLinhas"></div><br>
+
+    <label for="inputPesquisa">Pesquise por uma linha</label><br>
+    <input type="text" id="inputPesquisa"><br><br>
+
+    <button onclick="pesquisarLinha()">Pesquisar</button>
+    <div id="textoResultados"></div>
+</body>
+</html>
+
+<script>
+    let listLinhas = [];
+    
+    function registrarLinha() {
+        let linha = document.getElementById("inputLinha").value;
+        
+        listLinhas.push(linha);
+        document.getElementById("textoLinhas").innerHTML = `${listLinhas}<br>`;
+    }
+    
+    function pesquisarLinha() {
+        let bairroPesquisado = document.getElementById("inputPesquisa").value;
+        
+        if (listLinhas.indexOf(bairroPesquisado) == -1) {
+            alert("Você nunca pegou essa linha")
+        } else {
+            let repeatedWords = 0;
+            let indexOfRepeated = [];
+
+            for (let i = 0; i < listLinhas.length; i++) {
+                if (bairroPesquisado == listLinhas[i]) {
+                    repeatedWords += 1;
+                    indexOfRepeated.push(i + 1);
+
+                    document.getElementById("textoResultados").innerHTML = 
+                        `Você já pegou essa linha ${repeatedWords} vezes, nessa ordem: ${indexOfRepeated}`;
+                }
+            }
+        }
+    }
+</script>

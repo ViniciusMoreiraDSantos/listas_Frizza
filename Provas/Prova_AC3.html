@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: block;" id="telaInicial">
+        <h1>AllFat - Auxílio Alimentação</h1>
+        <br>
+        Informe o valor dos benefícios  
+        <input type="text" name="" id="valorBeneficio">
+        <br>
+        <button onclick="cadastrar()">Cadastrar</button>
+        <button onclick="pesquisar()">Pesquisar</button>
+        <br>
+        <span id="mostrar"></span>
+    </div>
+
+    <div id="telaSecundaria" style="display: none;">
+        <h1>AllFat - Auxílio Alimentação</h1>
+        Informe o intervalo de Valores para a pesquisa
+        <br>
+        de: <input type="text" name="" id="intValores"> até <input type="text" name="" id="intValoresFinal"> <button onclick="resumoIntervalo()">Resumir intervalo
+        </button>
+        <br>
+        Informe o Valor para ser pesquisado: 
+        <br>
+        valor: <input type="text" id="ValorPesquisa"><button onclick="procurar()">Procurar</button>
+        <span id="resumo"></span>
+    </div>
+</body>
+</html>
+<script>
+    var vtBen = [];
+    function cadastrar(){
+        var beneficio = Number(valorBeneficio.value)
+        if(beneficio < 3 ||  beneficio > 35){
+            alert("Insira um valor entre R$3,00 e 35,00")
+        }
+        else{
+            vtBen.push(beneficio);
+            mostrar.innerHTML = '';
+            valorBeneficio.value = '';
+            mostrar.innerHTML += '<h2>Historico dos Benefícios<h2>'
+            for(var i = vtBen.length -1; i >= 0; i--){
+                mostrar.innerHTML += `<br>A ${i+ 1}º ocorrêcia é: ${vtBen[i]}`
+            }
+        }
+    }
+
+    function pesquisar(){
+        
+        if(vtBen.length > 0){
+
+            telaInicial.style.display = 'none'
+            telaSecundaria.style.display = 'block'
+        }
+    else{
+        alert('Insira Algum valor')
+    }            
+    }
+
+    function resumoIntervalo(){
+        var intvalorInicial = Number(intValores.value);
+        var intvalorFinal = Number(intValoresFinal.value);
+        if(intvalorInicial < 3 || intvalorFinal > 35){
+            alert("É necessário ter um intervalo válido (entre 3,00  e 35,00)")
+        }
+        else{
+            var mediaTotal = 0;
+            var max = -99;
+            var min = 99;
+            var media = 0;
+            var somadasMedias = 0
+            for(var i = 0; i <= vtBen.length; i++){
+                if(vtBen[i] >= intvalorInicial && vtBen[i] <= intvalorFinal ){
+                    somadasMedias += Number(vtBen[i]);
+                    
+                    if(vtBen[i] < min){
+                        min = vtBen[i];
+                    }
+                    if(vtBen[i] > max){
+                        max = vtBen[i]
+
+                    }
+                }
+                    
+            }
+            mediaTotal = (somadasMedias/vtBen.length).toFixed(2);
+            resumo.innerHTML = `<h1>Buscar por um valor de Benefício</h1>` 
+            resumo.innerHTML += `<br>O MAIOR valor encontrado no intervalo informado foi ${max}<br>`
+            resumo.innerHTML += `O MENOR valor encontrado no intervalo informado foi ${min}<br>` 
+            resumo.innerHTML += `A Média dos valores do intervalo informado foi ${mediaTotal}<br>`
+        }
+
+    }
+    function procurar(){
+        resumo.innerHTML = ''
+        resumo.innerHTML = `<h1>Buscar por um valor de Benefício</h1>` 
+        var ValorRetorno = Number(ValorPesquisa.value);
+        if(ValorRetorno == ''){
+            alert('Insira algum valor numérico')
+        }
+        else{
+
+            if(vtBen.indexOf(ValorRetorno) == -1){
+                resumo.innerHTML += `O valor R$${ValorRetorno} NÃO foi encontrado`;
+            }
+            else{
+                for(var i = 0; i <= vtBen.length; i++){
+                    if(ValorRetorno == vtBen[i]){
+                        resumo.innerHTML += `<br>O valor R$${ValorRetorno.toFixed(2)} foi encontrado na ${i + 1}º ocorrência<br>`
+                    }
+                }
+            }
+        }
+    }
+
+</script>

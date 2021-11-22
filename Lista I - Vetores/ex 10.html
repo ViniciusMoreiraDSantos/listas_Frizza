@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="busao">
+    <br>
+    <input type="text" name="" id="pesq">
+    <br>
+    <button onclick="gravar()">gravar busão</button>
+    <br>
+    <button onclick="pesquisar()">pesquisar</button>
+    <br>
+    <span id="mostrar"></span>
+</body>
+
+</html>
+<script>
+    var vtbusao = [];
+    function gravar() {
+        var bus = busao.value;
+        vtbusao.push(bus);
+        bus = ''
+        mostrar.innerHTML = ''
+        for (var i = 0; i < vtbusao.length; i++) {
+            mostrar.innerHTML += vtbusao[i] + '<br>'
+        }
+
+    }
+
+
+    function pesquisar() {
+        var posicao = 0;
+        var buscar = pesq.value
+        var qtd = 0;
+        var vtvezes = [];
+        if (vtbusao.indexOf(buscar) == -1) {
+            mostrar.innerHTML += `Você nunca pegou essa linha`
+        }
+        else {
+
+            
+            mostrar.innerHTML = ''
+            for (var index = 0; index < vtbusao.length; index++) {
+                if (buscar == vtbusao[index]) {
+                    qtd++
+                    vtvezes.push(index + 1)
+
+                }
+            }
+            mostrar.innerHTML += ` Você já pegou essa linha ${qtd}vezes, nessa ordem: ${vtvezes + 'º'}, `
+
+        }
+    }
+
+</script>
